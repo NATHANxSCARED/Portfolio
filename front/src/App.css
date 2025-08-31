@@ -1,7 +1,10 @@
 body{
   background-image: url('./img/background.png');
   background-repeat: no-repeat;
+  background-size: cover
 }
+
+
 
 .card{
   background-color: rgba(122, 122, 122, 0.7) ;
@@ -76,8 +79,8 @@ button {
 .satalite {
   position: relative;
   left: -1em;
-  top: -3em;
-  animation: 4s around infinite;
+  top: -2em;
+  animation: 2s around infinite;
   transition: .4s ease-in-out;
 }
 
