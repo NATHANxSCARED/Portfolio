@@ -55,6 +55,7 @@ body {
   gap: 2rem;
   margin: 0;
   padding: 0;
+
 }
 
 .nav-link {
@@ -62,9 +63,12 @@ body {
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  transition: all 0.3s ease;
+  transition:all 0.5s ease-in-out;
+
+  // transition: all 1s ease;
   
   &:hover {
+    text-shadow: 0 0 10px rgba($neon-blue, 0.5);
     background: rgba($neon-blue, 0.2);
     color: $neon-blue;
   }
