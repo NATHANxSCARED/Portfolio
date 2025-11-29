@@ -1,16 +1,10 @@
 import React from 'react';
 import './css/Projects.scss';
+import Header from "../components/Header";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  githubUrl: string;
-  technologies: string[];
-}
 
-const ProjectsPage: React.FC = () => {
-  const projects: Project[] = [
+const ProjectsPage = () => {
+  const projects = [
     {
       id: 1,
       title: "Mission Control System",
@@ -43,6 +37,7 @@ const ProjectsPage: React.FC = () => {
 
   return (
     <div className="projects-page">
+      <Header />
       <div className="space-background">
         <div className="stars"></div>
         <div className="twinkling"></div>

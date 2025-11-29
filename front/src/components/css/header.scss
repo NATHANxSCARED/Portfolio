@@ -1,0 +1,56 @@
+// Local variables keep header styles self-contained
+$neon-blue: #00b0ff;
+$text-color: #ffffff;
+
+.header {
+  background: rgba(10, 14, 41, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba($neon-blue, 0.3);
+
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.title {
+  color: $neon-blue;
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 0 0 10px rgba($neon-blue, 0.5);
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+
+}
+
+.nav-link {
+  color: $text-color;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition:all 0.5s ease-in-out;
+
+  // transition: all 1s ease;
+  
+  &:hover {
+    text-shadow: 0 0 10px rgba($neon-blue, 0.5);
+    background: rgba($neon-blue, 0.2);
+    color: $neon-blue;
+  }
+}
