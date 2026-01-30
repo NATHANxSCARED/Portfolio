@@ -9,8 +9,8 @@ const ProjectsPage = () => {
       id: 1,
       title: "Mission Control System",
       description: "Système de contrôle de mission spatiale avec interface temps réel",
-      githubUrl: "https://github.com/username/mission-control",
-      technologies: ["React", "TypeScript", "WebSocket", "NASA API"]
+      githubUrl: "https://github.com/NATHANxSCARED/nexly.git",
+      technologies: ["React", "js", "jwt", "bcypt"]
     },
     {
       id: 2,

@@ -1,0 +1,231 @@
+$space-dark: #0a0e29;
+$space-blue: #1a237e;
+$neon-blue: #00b0ff;
+$neon-purple: #7c4dff;
+$card-bg: rgba(26, 35, 126, 0.35);
+$text-color: #e5e7ff;
+$panel-gradient: linear-gradient(145deg, rgba(22, 36, 90, 0.9), rgba(12, 18, 52, 0.9));
+$border-glow: 0 15px 45px rgba(0, 176, 255, 0.15);
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.contact-page {
+  min-height: 100vh;
+  position: relative;
+  background: radial-gradient(circle at 20% 20%, rgba($neon-blue, 0.15), transparent 35%),
+              radial-gradient(circle at 80% 0%, rgba($neon-purple, 0.2), transparent 40%),
+              linear-gradient(135deg, #0b122f 0%, #0d0f2a 40%, #0c1a42 100%);
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+.space-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.stars, .twinkling {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+}
+
+.stars {
+  background-image: 
+    radial-gradient(1px 1px at 20px 30px, white, transparent),
+    radial-gradient(1px 1px at 80px 120px, white, transparent),
+    radial-gradient(1px 1px at 150px 80px, white, transparent),
+    radial-gradient(1px 1px at 200px 200px, white, transparent);
+  background-size: 200px 200px;
+  opacity: 0.4;
+  animation: float 10s ease-in-out infinite;
+}
+
+.twinkling {
+  background-image: 
+    radial-gradient(1px 1px at 40px 60px, rgba(255, 255, 255, 0.8), transparent),
+    radial-gradient(1px 1px at 100px 180px, rgba(255, 255, 255, 0.8), transparent);
+  background-size: 300px 300px;
+  opacity: 0.3;
+  animation: float 12s ease-in-out infinite reverse;
+}
+
+.contact-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 120px 1.5rem 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.intro {
+  backdrop-filter: blur(12px);
+  background: $panel-gradient;
+  border: 1px solid rgba($neon-blue, 0.4);
+  border-radius: 22px;
+  padding: 2.2rem;
+  box-shadow: $border-glow;
+}
+
+.eyebrow {
+  letter-spacing: 0.15em;
+  font-size: 0.9rem;
+  color: rgba($text-color, 0.8);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0 0 0.75rem;
+  background: linear-gradient(90deg, $neon-blue, $neon-purple);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 18px rgba($neon-blue, 0.4);
+}
+
+.lead {
+  color: rgba($text-color, 0.88);
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+}
+
+.contact-cards {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.contact-card {
+  display: flex;
+  gap: 0.85rem;
+  align-items: center;
+  padding: 1.2rem 1.4rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(15, 27, 76, 0.9), rgba(10, 16, 48, 0.95));
+  border: 1px solid rgba($neon-blue, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), $border-glow;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: $neon-blue;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 10px 30px rgba($neon-blue, 0.35);
+  }
+
+  a {
+    color: $text-color;
+    text-decoration: none;
+
+    &:hover {
+      color: $neon-blue;
+    }
+  }
+}
+
+.card-icon {
+  font-size: 1.8rem;
+  color: $neon-blue;
+  text-shadow: 0 0 12px rgba($neon-blue, 0.6);
+}
+
+.card-title {
+  margin: 0;
+  font-weight: 800;
+  font-size: 2rem;
+  color: $neon-blue;
+  text-shadow: 0 0 14px rgba($neon-blue, 0.5);
+}
+
+.contact-form {
+  background: $panel-gradient;
+  border: 1px solid rgba($neon-purple, 0.35);
+  border-radius: 22px;
+  padding: 2.4rem 2rem;
+  box-shadow: $border-glow;
+  backdrop-filter: blur(12px);
+  color: $text-color;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1.4rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: rgba($text-color, 0.9);
+
+  input,
+  textarea {
+    margin-top: 0.5rem;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+    border: 1px solid rgba($neon-blue, 0.4);
+    color: white;
+    padding: 1rem 0rem;
+    border-radius: 12px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      border-color: $neon-blue;
+      box-shadow: 0 0 0 3px rgba($neon-blue, 0.25), 0 10px 25px rgba($neon-blue, 0.2);
+    }
+
+    &::placeholder {
+      color: rgba($text-color, 0.5);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+}
+
+.submit-btn {
+  width: 100%;
+  background: linear-gradient(90deg, $neon-blue, $neon-purple);
+  border: none;
+  color: white;
+  font-weight: 800;
+  padding: 1.05rem 1.25rem;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba($neon-blue, 0.4);
+  }
+}
+
+.form-status {
+  margin-top: 0.75rem;
+  color: $neon-blue;
+  font-weight: 600;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 100px 1rem 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
