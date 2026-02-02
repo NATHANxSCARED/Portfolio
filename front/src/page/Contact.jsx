@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./css/Contact.scss";
-import Header from "../components/Header";
 
 const Contact = () => {
   const [status, setStatus] = useState("");
@@ -17,9 +16,12 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-page">
-      <Header />
-
+    <div
+      className="contact-page"
+      data-aos="zoom-in"
+      data-aos-offset="120"
+      data-aos-duration="900"
+    >
       <div className="space-background">
         <div className="stars"></div>
         <div className="twinkling"></div>
@@ -58,7 +60,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form id="contact-form" className="contact-form" onSubmit={handleSubmit}>
           <div className="form-grid">
             <label>
               Nom complet

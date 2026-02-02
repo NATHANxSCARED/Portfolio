@@ -1,6 +1,5 @@
 import React from 'react';
 import './css/Projects.scss';
-import Header from "../components/Header";
 
 
 const ProjectsPage = () => {
@@ -36,8 +35,12 @@ const ProjectsPage = () => {
   ];
 
   return (
-    <div className="projects-page">
-      <Header />
+    <div
+      className="projects-page"
+      data-aos="zoom-in"
+      data-aos-offset="120"
+      data-aos-duration="900"
+    >
       <div className="space-background">
         <div className="stars"></div>
         <div className="twinkling"></div>
@@ -49,7 +52,10 @@ const ProjectsPage = () => {
         
         <div className="projects-grid">
           {projects.map((project) => (
-            <div key={project.id} className="project-card">
+            <div
+              key={project.id}
+              className="project-card"
+            >
               <div className="card-glow"></div>
               <div className="card-content">
                 <h3 className="project-title">{project.title}</h3>

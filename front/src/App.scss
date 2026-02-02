@@ -1,0 +1,142 @@
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox hide scrollbar */
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* Chrome / Edge / Safari hide scrollbar */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Fond spatial global + pile */
+.app-shell {
+  position: relative;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.global-space {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 20%, rgba(0, 176, 255, 0.08), transparent 32%),
+              radial-gradient(circle at 80% 0%, rgba(124, 77, 255, 0.08), transparent 40%),
+              #050815;
+}
+
+.stars,
+.twinkling {
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat;
+}
+
+.stars {
+  background-image:
+    radial-gradient(2px 2px at 20px 30px, #ffffff, transparent),
+    radial-gradient(2px 2px at 40px 70px, #ffffff, transparent),
+    radial-gradient(1px 1px at 90px 40px, #ffffff, transparent),
+    radial-gradient(1px 1px at 130px 80px, #ffffff, transparent),
+    radial-gradient(2px 2px at 160px 30px, #ffffff, transparent);
+  background-size: 200px 120px;
+  animation: twinkle 4s ease-in-out infinite alternate;
+  opacity: 0.35;
+}
+
+.twinkling {
+  background-image:
+    radial-gradient(1px 1px at 60px 90px, rgba(255, 255, 255, 0.9), transparent),
+    radial-gradient(1px 1px at 140px 30px, rgba(255, 255, 255, 0.8), transparent);
+  background-size: 260px 180px;
+  animation: twinkle 6s ease-in-out infinite alternate-reverse;
+  opacity: 0.25;
+}
+
+.page-stack {
+  margin: 0;
+  padding: 0;
+  scroll-snap-type: y proximity;
+  scroll-padding-top: 0;
+  /* Scroll-driven timeline used for reveal animations (Chrome/Edge/Firefox recent) */
+  scroll-timeline-name: page-scroll;
+  scroll-timeline-axis: block;
+  position: relative;
+  z-index: 1;
+}
+
+.page-section {
+  position: relative;
+  min-height: 100vh;
+  scroll-margin-top: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  isolation: isolate;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding: 96px 0;
+}
+
+.home-section {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.page-section > * {
+  flex: 1 1 100%;
+  width: 100%;
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.95rem;
+  color: #c8e9ff;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+}
+
+.cue-line {
+  display: inline-block;
+  width: 2px;
+  height: 48px;
+  background: linear-gradient(180deg, rgba(0, 176, 255, 0.8), transparent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.cue-label {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  pointer-events: auto;
+
+  &:hover {
+    color: #00b0ff;
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(6px); }
+  100% { opacity: 0.3; transform: translateY(0); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* (scroll-timeline keyframes kept for progressive enhancement if desired)
+@keyframes section-reveal { ... } */
