@@ -15,9 +15,7 @@ $border-glow: 0 15px 45px rgba(0, 176, 255, 0.15);
 .contact-page {
   min-height: 100vh;
   position: relative;
-  background: radial-gradient(circle at 20% 20%, rgba($neon-blue, 0.15), transparent 35%),
-              radial-gradient(circle at 80% 0%, rgba($neon-purple, 0.2), transparent 40%),
-              linear-gradient(135deg, #0b122f 0%, #0d0f2a 40%, #0c1a42 100%);
+
   color: white;
   font-family: 'Arial', sans-serif;
   overflow: hidden;

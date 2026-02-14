@@ -3,6 +3,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.scss";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Home from "./page/Home";
 import Project from "./page/Project";
 import Contact from "./page/Contact";
@@ -28,12 +29,6 @@ function App() {
       <main className="page-stack">
         <section id="home" className="page-section home-section">
           <Home />
-          <div className="scroll-cue">
-            <span className="cue-line" aria-hidden="true" />
-            <a className="cue-label" href="#projects">
-              Scroll pour voir mes projets
-            </a>
-          </div>
         </section>
 
         <section id="projects" className="page-section">
@@ -44,6 +39,8 @@ function App() {
           <Contact />
         </section>
       </main>
+
+      <Footer />
     </div>
   );
 }

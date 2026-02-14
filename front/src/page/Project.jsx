@@ -47,8 +47,8 @@ const ProjectsPage = () => {
       </div>
       
       <div className="projects-container">
-        <h1 className="page-title">Projets Spatiaux</h1>
-        <p className="page-subtitle">Explorez mes projets liés à l'espace et l'astronomie</p>
+        <h1 className="page-title">Projets</h1>
+        <p className="page-subtitle">Explorez mes projets</p>
         
         <div className="projects-grid">
           {projects.map((project) => (
@@ -57,7 +57,7 @@ const ProjectsPage = () => {
               className="project-card"
             >
               <div className="card-glow"></div>
-              <div className="card-content">
+              <div className="card-content" data-aos="flip-up" data-aos-duration="1500">
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
                 

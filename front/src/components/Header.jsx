@@ -3,7 +3,7 @@ import "./css/header.scss"
 
 function Header() {
   return (
-    <header className="header">
+    <header className="header" data-aos="fade-right" data-aos-duration="1500">
       <div className="header-content">
         <h1 className="title">Nathan's Portfolio</h1>
         <nav className="nav">
