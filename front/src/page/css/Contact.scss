@@ -173,7 +173,8 @@ label {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
     border: 1px solid rgba($neon-blue, 0.4);
     color: white;
-    padding: 1rem 0rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     border-radius: 12px;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -184,6 +185,8 @@ label {
     }
 
     &::placeholder {
+      padding-left: 1rem;
+      padding-bottom: 2rem;
       color: rgba($text-color, 0.5);
     }
   }
