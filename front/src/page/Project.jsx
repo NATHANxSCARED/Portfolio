@@ -6,10 +6,10 @@ const ProjectsPage = () => {
   const projects = [
     {
       id: 1,
-      title: "Mission Control System",
-      description: "Système de contrôle de mission spatiale avec interface temps réel",
+      title: "Nexly web site",
+      description: "Site web profetionelle de présentation de service ",
       githubUrl: "https://github.com/NATHANxSCARED/nexly.git",
-      technologies: ["React", "js", "jwt", "bcypt"]
+      technologies: ["React", "js", "jwt", "bcypt","express","react-routeur"]
     },
     {
       id: 2,
