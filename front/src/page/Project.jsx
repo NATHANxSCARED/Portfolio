@@ -13,10 +13,10 @@ const ProjectsPage = () => {
     },
     {
       id: 2,
-      title: "Satellite Tracker",
-      description: "Application de suivi de satellites en orbite terrestre",
-      githubUrl: "https://github.com/username/satellite-tracker",
-      technologies: ["Three.js", "React", "Space API"]
+      title: "ticketing app",
+      description: "Application de suivi de tickets",
+      githubUrl: "https://github.com/Nexly-Dev/Ticket",
+      technologies: ["express.js", "React", "DB", "jwt", "bcrypt","AOS","react-router-dom"]
     },
     {
       id: 3,
