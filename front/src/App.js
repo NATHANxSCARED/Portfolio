@@ -15,6 +15,7 @@ function App() {
       easing: "ease-out-cubic",
       offset: 80,
       once: false,
+      mirror: true,
     });
   }, []);
 
