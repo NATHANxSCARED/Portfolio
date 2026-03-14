@@ -13,24 +13,10 @@ const ProjectsPage = () => {
     },
     {
       id: 2,
-      title: "ticketing app",
-      description: "Application de suivi de tickets",
+      title: "Ticketing system",
+      description: "Application de suivi de tache sur des projects",
       githubUrl: "https://github.com/Nexly-Dev/Ticket",
-      technologies: ["express.js", "React", "DB", "jwt", "bcrypt","AOS","react-router-dom"]
-    },
-    {
-      id: 3,
-      title: "Space Weather Dashboard",
-      description: "Tableau de bord météorologie spatiale et alertes solaires",
-      githubUrl: "https://github.com/username/space-weather",
-      technologies: ["Vue.js", "D3.js", "NASA API"]
-    },
-    {
-      id: 4,
-      title: "Rocket Launch Simulator",
-      description: "Simulateur de lancement de fusées avec physique réaliste",
-      githubUrl: "https://github.com/username/rocket-simulator",
-      technologies: ["Unity", "C#", "Physics Engine"]
+      technologies: ["React", "jwt", "express","bcypt","UI/UX","SQL"]
     }
   ];
 

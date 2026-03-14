@@ -19,6 +19,7 @@ body::-webkit-scrollbar {
   position: relative;
   min-height: 100vh;
   color: #fff;
+  overflow: hidden; 
 }
 
 .global-space {
@@ -62,11 +63,6 @@ body::-webkit-scrollbar {
 .page-stack {
   margin: 0;
   padding: 0;
-  scroll-snap-type: y proximity;
-  scroll-padding-top: 0;
-  /* Scroll-driven timeline used for reveal animations (Chrome/Edge/Firefox recent) */
-  scroll-timeline-name: page-scroll;
-  scroll-timeline-axis: block;
   position: relative;
   z-index: 1;
 }
@@ -79,8 +75,6 @@ body::-webkit-scrollbar {
   align-items: stretch;
   justify-content: stretch;
   isolation: isolate;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   padding: 96px 0;
 }
 

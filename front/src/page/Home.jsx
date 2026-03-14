@@ -8,6 +8,7 @@ function Home() {
       data-aos="zoom-in"
       data-aos-offset="120"
       data-aos-duration="1500"
+      data-aos-mirror="true"
     >
       <main className="main" id="home">
         <div className="card">

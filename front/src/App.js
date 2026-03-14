@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Home from "./page/Home";
 import Project from "./page/Project";
 import Contact from "./page/Contact";
+import StarField from "./components/star";
 
 function App() {
   useEffect(() => {
@@ -16,14 +17,14 @@ function App() {
       offset: 80,
       once: false,
       mirror: true,
+      anchorPlacement: "top-bottom",
     });
   }, []);
 
   return (
     <div className="app-shell">
       <div className="global-space">
-        <div className="stars"></div>
-        <div className="twinkling"></div>
+        <StarField count={200} />
       </div>
       <Header />
 
