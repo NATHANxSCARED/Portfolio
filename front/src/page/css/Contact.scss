@@ -147,7 +147,7 @@ h1 {
   background: $panel-gradient;
   border: 1px solid rgba($neon-purple, 0.35);
   border-radius: 22px;
-  padding: 2.4rem 2rem;
+  padding: 2rem 2rem;
   box-shadow: $border-glow;
   backdrop-filter: blur(12px);
   color: $text-color;
@@ -169,23 +169,26 @@ label {
   input,
   textarea {
     margin-top: 0.5rem;
+    display: block;
     width: 100%;
+    box-sizing: border-box;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
     border: 1px solid rgba($neon-blue, 0.4);
     color: white;
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-radius: 12px;
+    padding-left: 1rem;
     outline: none;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
     &:focus {
       border-color: $neon-blue;
       box-shadow: 0 0 0 3px rgba($neon-blue, 0.25), 0 10px 25px rgba($neon-blue, 0.2);
+
     }
 
     &::placeholder {
-      padding-left: 1rem;
       padding-bottom: 2rem;
       color: rgba($text-color, 0.5);
     }

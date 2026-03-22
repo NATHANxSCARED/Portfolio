@@ -108,6 +108,17 @@ body::-webkit-scrollbar {
   pointer-events: none;
 }
 
+@media (max-width: 768px) {
+  .scroll-cue {
+    padding-top: 55rem;
+    font-size: 0.85rem;
+    gap: 10px;
+  }
+  .cue-label{
+    text-align: center;
+  }
+}
+
 .cue-line,
 .cue-line2 {
   display: inline-block;

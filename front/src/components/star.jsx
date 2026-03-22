@@ -19,7 +19,7 @@ export default function StarField({ count = 180 }) {
     const stars = Array.from({ length: count }, () => ({
       x: Math.random(),
       y: Math.random(),
-      r: Math.random() * 1.6 + 0.2,          // rayon 0.2 → 1.8px
+      r: Math.random() * 1.6 + 0.2,         
       alpha: Math.random() * 0.7 + 0.3,       // opacité de base
       speed: Math.random() * 0.008 + 0.002,   // vitesse de scintillement
       phase: Math.random() * Math.PI * 2,     // phase décalée

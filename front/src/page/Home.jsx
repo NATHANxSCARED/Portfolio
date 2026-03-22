@@ -13,7 +13,7 @@ function Home() {
       <main className="main" id="home">
         <div className="card">
           <div className="card-content">
-            <h2 className="card-title">Bienvenu</h2>
+            <h2 className="card-title">Bienvenue</h2>
             <p>
               Passionné par le développement et l'innovation, j'aime faire plein de projets
               informatiques passionnants qui me poussent à repousser mes limites. Explorez mes
@@ -24,7 +24,7 @@ function Home() {
 
             <div className="Btn">
               <a className="contact-btn" href="#contact-form">
-                Contact Me
+                Contacté moi
               </a>
             </div>
           </div>
@@ -33,7 +33,7 @@ function Home() {
           <div className="scroll-cue">
             <span className="cue-line" aria-hidden="true" />
             <a className="cue-label" href="#projects">
-              Scroll pour voir mes projets
+              Descend pour voir mes projects
             </a>
             <span className="cue-line cue-line2" aria-hidden="true" />
 
