@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./page/Home";
 import Project from "./page/Project";
+import Skills from "./page/Skills";
 import Contact from "./page/Contact";
 import StarField from "./components/star";
 
@@ -31,6 +32,10 @@ function App() {
       <main className="page-stack">
         <section id="home" className="page-section home-section">
           <Home />
+        </section>
+
+        <section id="skills" className="page-section skills-section">
+          <Skills />
         </section>
 
         <section id="projects" className="page-section">

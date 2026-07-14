@@ -84,6 +84,11 @@ body::-webkit-scrollbar {
   justify-content: center;
 }
 
+.skills-section {
+  padding-top: 120px;
+  min-height: auto;
+}
+
 .home-section > .App {
   animation: floatY 4s ease-in-out infinite;
   will-change: transform;

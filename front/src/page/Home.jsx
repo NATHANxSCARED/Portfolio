@@ -24,7 +24,7 @@ function Home() {
 
             <div className="Btn">
               <a className="contact-btn" href="#contact-form">
-                Contacté moi
+                Contactez-moi
               </a>
             </div>
           </div>
@@ -32,8 +32,8 @@ function Home() {
 
           <div className="scroll-cue">
             <span className="cue-line" aria-hidden="true" />
-            <a className="cue-label" href="#projects">
-              Descend pour voir mes projects
+            <a className="cue-label" href="#skills">
+              Découvrir mes compétences
             </a>
             <span className="cue-line cue-line2" aria-hidden="true" />
 

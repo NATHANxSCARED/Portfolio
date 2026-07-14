@@ -27,9 +27,11 @@ function Header() {
           className={`nav ${menuOpen ? "nav--open" : ""}`}
         >
           <ul>
-            <li><a href="#home"     className="nav-link" onClick={() => setMenuOpen(false)}>Home</a></li>
-            <li><a href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>Projects</a></li>
-            <li><a href="#contact"  className="nav-link" onClick={() => setMenuOpen(false)}>Contact me</a></li>
+            <li><a href="#home" className="nav-link" onClick={() => setMenuOpen(false)}>Accueil</a></li>
+            <li><a href="#skills" className="nav-link" onClick={() => setMenuOpen(false)}>Compétences</a></li>
+            <li><a href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>Projets</a></li>
+            <li><a href="#certifications" className="nav-link" onClick={() => setMenuOpen(false)}>Parcours</a></li>
+            <li><a href="#contact" className="nav-link" onClick={() => setMenuOpen(false)}>Contact</a></li>
           </ul>
         </nav>
       </div>
