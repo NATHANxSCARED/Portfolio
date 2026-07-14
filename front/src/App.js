@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="app-shell">
       <div className="global-space">
-        <StarField count={200} />
+        <StarField count={700} />
       </div>
       <Header />
 
