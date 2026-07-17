@@ -83,6 +83,7 @@ function SkillConstellation() {
   const canvasRef = useRef(null);
   const detailRef = useRef(null);
   const sceneStateRef = useRef(null);
+  const selectedIndexRef = useRef(null);
   const [selectedIndex, setSelectedIndex] = useState(null);
   const selectedSkill = useMemo(
     () => selectedIndex === null ? null : constellationSkills[selectedIndex],
@@ -313,14 +314,29 @@ function SkillConstellation() {
       coreWire.rotation.y = elapsed * 0.16;
       dust.rotation.y = elapsed * 0.012;
 
+      const activeIndex = selectedIndexRef.current;
       nodes.forEach((node, index) => {
         const base = node.userData.basePosition;
         node.position.y = base.y + Math.sin(elapsed * 0.72 + node.userData.phase) * 0.11;
         node.rotation.y = elapsed * (0.25 + index * 0.012);
         node.rotation.z = Math.sin(elapsed * 0.35 + index) * 0.15;
-        const targetScale = hoveredIndex === index ? 1.42 : 1;
-        const nextScale = THREE.MathUtils.lerp(node.scale.x, targetScale, 0.12);
+
+        const isSelected = activeIndex === index;
+        const isHovered = hoveredIndex === index;
+        const targetScale = isSelected ? 2.2 : isHovered ? 1.42 : 1;
+        const lerpSpeed = isSelected ? 0.08 : 0.12;
+        const nextScale = THREE.MathUtils.lerp(node.scale.x, targetScale, lerpSpeed);
         node.scale.setScalar(nextScale);
+
+        const planet = node.children[0];
+        if (planet?.material) {
+          const targetEmissive = isSelected ? 1.4 : 0.62;
+          planet.material.emissiveIntensity = THREE.MathUtils.lerp(
+            planet.material.emissiveIntensity,
+            targetEmissive,
+            0.08
+          );
+        }
       });
 
       if (!isDragging && !reducedMotion) universe.rotation.y += 0.0007;
@@ -350,24 +366,25 @@ function SkillConstellation() {
   }, []);
 
   useEffect(() => {
+    selectedIndexRef.current = selectedIndex;
     const sceneState = sceneStateRef.current;
     if (!sceneState) return undefined;
     const skill = selectedIndex === null ? null : constellationSkills[selectedIndex];
     const targetPosition = skill
-      ? { x: skill.position[0] * 0.18, y: skill.position[1] * 0.12, z: 8.1 }
+      ? { x: skill.position[0] * 0.32, y: skill.position[1] * 0.28, z: 8 }
       : { x: 0, y: 0, z: 9.5 };
     const lookAt = skill
-      ? { x: skill.position[0] * 0.2, y: skill.position[1] * 0.2, z: 0 }
+      ? { x: skill.position[0] * 0.45, y: skill.position[1] * 0.45, z: 0 }
       : { x: 0, y: 0, z: 0 };
 
     const cameraAnimation = animate(sceneState.camera.position, {
       ...targetPosition,
-      duration: 900,
+      duration: 1100,
       ease: "inOutExpo",
     });
     const targetAnimation = animate(sceneState.cameraTarget, {
       ...lookAt,
-      duration: 900,
+      duration: 1100,
       ease: "inOutExpo",
     });
 

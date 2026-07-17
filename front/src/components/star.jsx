@@ -20,12 +20,12 @@ export default function StarField({ count = 900 }) {
     // --- Scene / caméra / renderer ---
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-      60,
+      80,
       window.innerWidth / window.innerHeight,
       0.1,
       100
     );
-    camera.position.z = 8;
+    camera.position.z = 10;
 
     const renderer = new THREE.WebGLRenderer({
       canvas,
