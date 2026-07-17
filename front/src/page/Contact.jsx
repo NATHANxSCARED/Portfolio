@@ -3,16 +3,53 @@ import "./css/Contact.scss";
 
 const Contact = () => {
   const [status, setStatus] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
+    setErrorMessage("");
+
     const formData = new FormData(event.currentTarget);
     const name = formData.get("name");
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
 
-    setStatus(`Merci ${name || ""} je reviens vers toi rapidement.`);
-    event.currentTarget.reset();
+    try {
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+      
+      const response = await fetch(`${apiUrl}/email/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          subject,
+          message,
+        }),
+      });
 
-    setTimeout(() => setStatus(""), 4000);
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setStatus(`Merci ${name} ! Ton message a été envoyé avec succès. Je reviens vers toi rapidement.`);
+        event.currentTarget.reset();
+        setTimeout(() => setStatus(""), 5000);
+      } else {
+        setErrorMessage(data.message || "Une erreur est survenue lors de l'envoi.");
+        setTimeout(() => setErrorMessage(""), 5000);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setErrorMessage("Impossible de se connecter au serveur. Veuillez réessayer.");
+      setTimeout(() => setErrorMessage(""), 5000);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -105,11 +142,12 @@ const Contact = () => {
             ></textarea>
           </label>
 
-          <button type="submit" className="submit-btn">
-            Envoyer le message
+          <button type="submit" className="submit-btn" disabled={isLoading}>
+            {isLoading ? "Envoi en cours..." : "Envoyer le message"}
           </button>
 
-          {status && <p className="form-status">{status}</p>}
+          {status && <p className="form-status success">{status}</p>}
+          {errorMessage && <p className="form-status error">{errorMessage}</p>}
         </form>
       </div>
     </div>

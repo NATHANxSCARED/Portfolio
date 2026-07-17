@@ -9,3 +9,29 @@ services:
       - "3000:80"
     restart: unless-stopped
     container_name: portfolio-frontend
+    depends_on:
+      - backend
+    environment:
+      - REACT_APP_API_URL=http://localhost:5000/api
+
+  backend:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
+    container_name: portfolio-backend
+    environment:
+      - NODE_ENV=production
+      - PORT=5000
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_USER=${SMTP_USER}
+      - SMTP_PASS=${SMTP_PASS}
+      - EMAIL_FROM=${EMAIL_FROM}
+      - EMAIL_TO=${EMAIL_TO}
+      - CORS_ORIGIN=http://frontend
+    volumes:
+      - ./back:/app
+      - /app/node_modules
