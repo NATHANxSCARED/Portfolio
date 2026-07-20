@@ -44,14 +44,13 @@ export default function StarField({ count = 900 }) {
     const colors = new Float32Array(STAR_COUNT * 3);
 
     const palette = [
-      new THREE.Color("#ffffff"),
-      new THREE.Color("#cfe9ff"),
-      new THREE.Color("#9fd3ff"),
-      new THREE.Color("#c9b8ff"),
+      new THREE.Color("#d9e4ec"),
+      new THREE.Color("#9ab2c3"),
+      new THREE.Color("#7898ad"),
+      new THREE.Color("#8279a9"),
     ];
 
     for (let i = 0; i < STAR_COUNT; i++) {
-      // Répartition uniforme dans une coquille sphérique (évite le paquet au centre)
       const radius = 6 + Math.random() * 14;
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.acos(Math.random() * 2 - 1);
@@ -94,10 +93,10 @@ export default function StarField({ count = 900 }) {
 
         void main() {
           vColor = color;
-          vTwinkle = 0.55 + 0.45 * sin(uTime * speed + phase);
+          vTwinkle = 0.38 + 0.32 * sin(uTime * speed + phase);
 
           vec4 mvPosition = modelViewMatrix * vec4(position, 1.0);
-          gl_PointSize = size * uPixelRatio * (220.0 / -mvPosition.z) * (0.7 + vTwinkle * 0.5);
+          gl_PointSize = size * uPixelRatio * (220.0 / -mvPosition.z) * (0.62 + vTwinkle * 0.32);
           gl_Position = projectionMatrix * mvPosition;
         }
       `,
@@ -110,7 +109,7 @@ export default function StarField({ count = 900 }) {
           vec2 uv = gl_PointCoord - vec2(0.5);
           float d = length(uv);
           float core = smoothstep(0.5, 0.0, d);
-          float glow = smoothstep(0.5, 0.15, d) * 0.35;
+          float glow = smoothstep(0.5, 0.15, d) * 0.2;
           float alpha = (core + glow) * vTwinkle;
           if (alpha < 0.02) discard;
           gl_FragColor = vec4(vColor, alpha);
@@ -118,7 +117,7 @@ export default function StarField({ count = 900 }) {
       `,
       transparent: true,
       depthWrite: false,
-      blending: THREE.AdditiveBlending,
+      blending: THREE.NormalBlending,
     });
 
     const points = new THREE.Points(geometry, material);

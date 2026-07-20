@@ -1,4 +1,5 @@
 import React from "react";
+import { FiArrowRight, FiCode, FiLayers, FiPenTool } from "react-icons/fi";
 import "./css/Home.scss";
 
 function Home() {
@@ -13,8 +14,11 @@ function Home() {
       <main className="main" id="home">
         <div className="card">
           <div className="card-content">
-            <h2 className="card-title">Bienvenue</h2>
-            <p>
+            <p className="card-kicker">Portfolio développeur</p>
+
+            <h2 className="card-title">Bienvenue dans mon univers</h2>
+
+            <p className="card-text">
               Passionné par le développement et l'innovation, j'aime faire plein de projets
               informatiques passionnants qui me poussent à repousser mes limites. Explorez mes
               projets pour vous perdre dans cet univers vaste et infini qu'est l'informatique.
@@ -22,9 +26,29 @@ function Home() {
               possible pour la reproduire.
             </p>
 
-            <div className="Btn">
+            <div className="card-highlights" aria-label="Points forts">
+              <span>
+                <FiCode aria-hidden="true" />
+                Développement
+              </span>
+              <span>
+                <FiPenTool aria-hidden="true" />
+                UI créative
+              </span>
+              <span>
+                <FiLayers aria-hidden="true" />
+                Projets concrets
+              </span>
+            </div>
+
+            <div className="card-actions">
               <a className="contact-btn" href="#contact-form">
-                Contactez-moi
+                <span>Contactez-moi</span>
+                <FiArrowRight aria-hidden="true" />
+              </a>
+
+              <a className="projects-btn" href="#projects">
+                Voir mes projets
               </a>
             </div>
           </div>

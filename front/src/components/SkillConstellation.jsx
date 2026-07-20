@@ -15,8 +15,8 @@ const constellationSkills = [
   {
     name: "React",
     icon: SiReact,
-    color: 0x61dafb,
-    cssColor: "#61dafb",
+    color: 0x5fa5ba,
+    cssColor: "#5fa5ba",
     position: [-3.3, 1.65, 0.4],
     description:
       "Des interfaces modernes, fluides et construites avec des composants réutilisables.",
@@ -24,8 +24,8 @@ const constellationSkills = [
   {
     name: "Node.js",
     icon: SiNodedotjs,
-    color: 0x64d96b,
-    cssColor: "#64d96b",
+    color: 0x6ca879,
+    cssColor: "#6ca879",
     position: [-1.15, 2.5, -0.7],
     description:
       "Le moteur back-end de mes API, services et applications JavaScript.",
@@ -33,8 +33,8 @@ const constellationSkills = [
   {
     name: "n8n",
     icon: SiN8N,
-    color: 0xff6d5a,
-    cssColor: "#ff6d5a",
+    color: 0xb56d5f,
+    cssColor: "#b56d5f",
     position: [1.5, 2.25, 0.2],
     description:
       "Des automatisations qui relient les outils et font circuler les données intelligemment.",
@@ -42,8 +42,8 @@ const constellationSkills = [
   {
     name: "UI / UX",
     icon: SiFigma,
-    color: 0xa78bfa,
-    cssColor: "#a78bfa",
+    color: 0x8f83bf,
+    cssColor: "#8f83bf",
     position: [3.35, 0.85, -0.5],
     description:
       "Des parcours simples et des interfaces soignées, pensés avant d’être développés.",
@@ -51,8 +51,8 @@ const constellationSkills = [
   {
     name: "3D",
     icon: SiThreedotjs,
-    color: 0xec4899,
-    cssColor: "#ec4899",
+    color: 0xb05b8a,
+    cssColor: "#b05b8a",
     position: [2.85, -1.55, 0.6],
     description:
       "Des expériences web immersives avec Three.js, WebGL et une vraie profondeur visuelle.",
@@ -60,8 +60,8 @@ const constellationSkills = [
   {
     name: "Sécurité",
     icon: FaShieldHalved,
-    color: 0xfb7185,
-    cssColor: "#fb7185",
+    color: 0xb76573,
+    cssColor: "#b76573",
     position: [0.55, -2.45, -0.35],
     description:
       "Authentification, protection des données et bonnes pratiques intégrées dès la conception.",
@@ -69,8 +69,8 @@ const constellationSkills = [
   {
     name: "WordPress",
     icon: SiWordpress,
-    color: 0x60a5fa,
-    cssColor: "#60a5fa",
+    color: 0x6f8fc4,
+    cssColor: "#6f8fc4",
     position: [-2.05, -2.15, 0.15],
     description:
       "Des sites administrables et personnalisés, adaptés aux besoins réels du client.",
@@ -78,8 +78,8 @@ const constellationSkills = [
   {
     name: "Full-stack",
     icon: FaCode,
-    color: 0x00d4ff,
-    cssColor: "#00d4ff",
+    color: 0x4f91b5,
+    cssColor: "#4f91b5",
     position: [-3.7, -0.55, -0.45],
     description:
       "Une vision globale du produit, de la base de données jusqu’à l’expérience finale.",
@@ -123,7 +123,7 @@ function SkillConstellation() {
       window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
 
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x070b1d, 0.052);
+    scene.fog = new THREE.FogExp2(0x030611, 0.065);
 
     const camera = new THREE.PerspectiveCamera(48, 1, 0.1, 100);
     camera.position.copy(DEFAULT_CAMERA_POSITION);
@@ -141,12 +141,12 @@ function SkillConstellation() {
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setClearColor(0x000000, 0);
 
-    const ambientLight = new THREE.AmbientLight(0x8ab4ff, 1.3);
+    const ambientLight = new THREE.AmbientLight(0x6f91b8, 0.85);
 
-    const keyLight = new THREE.PointLight(0x9be7ff, 28, 25);
+    const keyLight = new THREE.PointLight(0x6faac2, 14, 25);
     keyLight.position.set(2, 4, 6);
 
-    const purpleLight = new THREE.PointLight(0x8b5cf6, 20, 20);
+    const purpleLight = new THREE.PointLight(0x67589c, 10, 20);
     purpleLight.position.set(-4, -2, 4);
 
     scene.add(ambientLight, keyLight, purpleLight);
@@ -157,23 +157,23 @@ function SkillConstellation() {
     const coreGeometry = new THREE.IcosahedronGeometry(0.72, 2);
 
     const coreMaterial = new THREE.MeshPhysicalMaterial({
-      color: 0x0c2442,
-      emissive: 0x00b8e6,
-      emissiveIntensity: 1.5,
-      roughness: 0.22,
-      metalness: 0.55,
+      color: 0x09162a,
+      emissive: 0x275a72,
+      emissiveIntensity: 0.55,
+      roughness: 0.34,
+      metalness: 0.35,
       transparent: true,
-      opacity: 0.94,
+      opacity: 0.9,
     });
 
     const core = new THREE.Mesh(coreGeometry, coreMaterial);
 
     const coreWireGeometry = new THREE.IcosahedronGeometry(0.87, 1);
     const coreWireMaterial = new THREE.MeshBasicMaterial({
-      color: 0x74e8ff,
+      color: 0x6faec6,
       wireframe: true,
       transparent: true,
-      opacity: 0.24,
+      opacity: 0.14,
     });
 
     const coreWire = new THREE.Mesh(coreWireGeometry, coreWireMaterial);
@@ -196,11 +196,11 @@ function SkillConstellation() {
       const material = new THREE.MeshPhysicalMaterial({
         color: skill.color,
         emissive: skill.color,
-        emissiveIntensity: 0.62,
+        emissiveIntensity: 0.28,
         roughness: 0.25,
         metalness: 0.35,
         transparent: true,
-        opacity: 0.9,
+        opacity: 0.86,
       });
 
       const planet = new THREE.Mesh(nodeGeometry, material);
@@ -209,7 +209,7 @@ function SkillConstellation() {
       const ringMaterial = new THREE.MeshBasicMaterial({
         color: skill.color,
         transparent: true,
-        opacity: 0.28,
+        opacity: 0.16,
       });
 
       const ring = new THREE.Mesh(ringGeometry, ringMaterial);
@@ -237,9 +237,9 @@ function SkillConstellation() {
     );
 
     const connectionsMaterial = new THREE.LineBasicMaterial({
-      color: 0x3bc9ff,
+      color: 0x4f91b5,
       transparent: true,
-      opacity: 0.16,
+      opacity: 0.09,
     });
 
     const connections = new THREE.LineSegments(
@@ -268,10 +268,10 @@ function SkillConstellation() {
     );
 
     const dustMaterial = new THREE.PointsMaterial({
-      color: 0xb9eaff,
+      color: 0x9fbfcb,
       size: 0.025,
       transparent: true,
-      opacity: 0.55,
+      opacity: 0.32,
     });
 
     const dust = new THREE.Points(dustGeometry, dustMaterial);
@@ -493,7 +493,7 @@ function SkillConstellation() {
         const planet = node.children[0];
 
         if (planet?.material) {
-          const targetEmissive = isSelected ? 1.4 : 0.62;
+          const targetEmissive = isSelected ? 0.72 : 0.28;
 
           planet.material.emissiveIntensity = THREE.MathUtils.lerp(
             planet.material.emissiveIntensity,

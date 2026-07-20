@@ -1,5 +1,5 @@
-$cyan: #00d4ff;
-$purple: #8b5cf6;
+$cyan: #4f91b5;
+$purple: #67589c;
 
 .skills-page {
   width: 100%;
@@ -22,7 +22,7 @@ $purple: #8b5cf6;
     margin: 0.55rem 0 1rem;
     font-size: clamp(2.4rem, 5vw, 4.25rem);
     line-height: 1;
-    background: linear-gradient(100deg, #fff 5%, $cyan 48%, #a78bfa 90%);
+    background: linear-gradient(100deg, #e7eef6 5%, $cyan 52%, #8f83bf 90%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -78,12 +78,12 @@ $purple: #8b5cf6;
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% 48%, rgba($cyan, 0.11), transparent 23%),
-    radial-gradient(circle at 75% 20%, rgba($purple, 0.13), transparent 28%),
-    linear-gradient(145deg, rgba(8, 15, 42, 0.82), rgba(5, 8, 24, 0.68));
-  border: 1px solid rgba($cyan, 0.2);
+    radial-gradient(circle at 50% 48%, rgba($cyan, 0.055), transparent 23%),
+    radial-gradient(circle at 75% 20%, rgba($purple, 0.065), transparent 28%),
+    linear-gradient(145deg, rgba(7, 12, 33, 0.9), rgba(3, 6, 18, 0.78));
+  border: 1px solid rgba($cyan, 0.14);
   border-radius: 28px;
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.32), inset 0 0 80px rgba($cyan, 0.03);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.38), inset 0 0 48px rgba($cyan, 0.02);
   isolation: isolate;
 
   &::before {
@@ -121,7 +121,7 @@ $purple: #8b5cf6;
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: opacity 0.25s ease;
-  text-shadow: 0 0 14px rgba($cyan, 0.85), 0 2px 8px #02050f;
+  text-shadow: 0 0 12px rgba($cyan, 0.3), 0 2px 8px #02050f;
 
   span {
     color: #e5f9ff;
@@ -152,12 +152,12 @@ $purple: #8b5cf6;
   border: 1px solid color-mix(in srgb, var(--skill-color) 48%, transparent);
   border-radius: 18px;
   backdrop-filter: blur(16px);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.36), 0 0 24px color-mix(in srgb, var(--skill-color) 12%, transparent);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.42), 0 0 18px color-mix(in srgb, var(--skill-color) 8%, transparent);
 
   > svg {
     color: var(--skill-color);
     font-size: 1.65rem;
-    filter: drop-shadow(0 0 10px color-mix(in srgb, var(--skill-color) 55%, transparent));
+    filter: drop-shadow(0 0 8px color-mix(in srgb, var(--skill-color) 28%, transparent));
   }
 
   > span {
@@ -235,8 +235,8 @@ $purple: #8b5cf6;
   &:hover,
   &.is-active {
     color: #fff;
-    background: color-mix(in srgb, var(--skill-color) 12%, rgba(6, 11, 31, 0.85));
-    border-color: color-mix(in srgb, var(--skill-color) 52%, transparent);
+    background: color-mix(in srgb, var(--skill-color) 8%, rgba(6, 11, 31, 0.9));
+    border-color: color-mix(in srgb, var(--skill-color) 36%, transparent);
     transform: translateY(-3px);
   }
 
@@ -276,14 +276,14 @@ $purple: #8b5cf6;
     top: -65px;
     border-radius: 50%;
     background: var(--accent);
-    opacity: 0.13;
+    opacity: 0.07;
     filter: blur(8px);
   }
 
   &:hover {
-    transform: translateY(-8px);
-    border-color: color-mix(in srgb, var(--accent) 55%, transparent);
-    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.3), 0 0 22px color-mix(in srgb, var(--accent) 20%, transparent);
+    transform: translateY(-5px);
+    border-color: color-mix(in srgb, var(--accent) 34%, transparent);
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.34), 0 0 16px color-mix(in srgb, var(--accent) 10%, transparent);
   }
 
   h3 {
@@ -300,13 +300,13 @@ $purple: #8b5cf6;
   }
 }
 
-.skill-card--green { --accent: #64d96b; }
-.skill-card--orange { --accent: #ff6d5a; }
-.skill-card--purple { --accent: #a78bfa; }
-.skill-card--pink { --accent: #ec4899; }
-.skill-card--red { --accent: #fb7185; }
-.skill-card--indigo { --accent: #60a5fa; }
-.skill-card--blue { --accent: #61dafb; }
+.skill-card--green { --accent: #6ca879; }
+.skill-card--orange { --accent: #b56d5f; }
+.skill-card--purple { --accent: #8f83bf; }
+.skill-card--pink { --accent: #b05b8a; }
+.skill-card--red { --accent: #b76573; }
+.skill-card--indigo { --accent: #6f8fc4; }
+.skill-card--blue { --accent: #5fa5ba; }
 
 .skill-card__top {
   display: flex;
@@ -320,8 +320,8 @@ $purple: #8b5cf6;
   display: grid;
   place-items: center;
   color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 38%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 26%, transparent);
   border-radius: 14px;
   font-size: 1.5rem;
   font-weight: 800;
@@ -342,9 +342,9 @@ $purple: #8b5cf6;
 
   span {
     padding: 0.32rem 0.6rem;
-    color: color-mix(in srgb, var(--accent) 78%, white);
-    background: color-mix(in srgb, var(--accent) 8%, transparent);
-    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+    color: color-mix(in srgb, var(--accent) 62%, white);
+    background: color-mix(in srgb, var(--accent) 6%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 15%, transparent);
     border-radius: 999px;
     font-size: 0.68rem;
     font-weight: 700;
@@ -373,14 +373,14 @@ $purple: #8b5cf6;
   gap: 1.25rem;
   padding: 1.5rem;
   background: linear-gradient(120deg, rgba(15, 30, 72, 0.78), rgba(42, 26, 82, 0.5));
-  border: 1px solid rgba($cyan, 0.22);
+  border: 1px solid rgba($cyan, 0.14);
   border-radius: 20px;
   backdrop-filter: blur(14px);
   transition: transform 0.3s ease, border-color 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    border-color: rgba($cyan, 0.65);
+    border-color: rgba($cyan, 0.35);
   }
 }
 
@@ -391,8 +391,8 @@ $purple: #8b5cf6;
   place-items: center;
   flex: 0 0 auto;
   color: $cyan;
-  background: rgba($cyan, 0.08);
-  border: 1px solid rgba($cyan, 0.35);
+  background: rgba($cyan, 0.06);
+  border: 1px solid rgba($cyan, 0.24);
   border-radius: 18px;
   font-size: 1.75rem;
   font-weight: 900;
@@ -401,7 +401,7 @@ $purple: #8b5cf6;
 
 .credential-content {
   span {
-    color: #a78bfa;
+    color: #8f83bf;
     font-size: 0.7rem;
     font-weight: 800;
     letter-spacing: 0.14em;
@@ -430,7 +430,7 @@ $purple: #8b5cf6;
   background: $cyan;
   border-radius: 50%;
   font-weight: 900;
-  box-shadow: 0 0 18px rgba($cyan, 0.45);
+  box-shadow: 0 0 14px rgba($cyan, 0.22);
 }
 
 @media (max-width: 950px) {

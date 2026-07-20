@@ -27,9 +27,9 @@ body::-webkit-scrollbar {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 20% 20%, rgba(0, 176, 255, 0.08), transparent 32%),
-              radial-gradient(circle at 80% 0%, rgba(124, 77, 255, 0.08), transparent 40%),
-              #050815;
+  background: radial-gradient(circle at 20% 20%, rgba(55, 105, 135, 0.045), transparent 32%),
+              radial-gradient(circle at 80% 0%, rgba(82, 68, 130, 0.05), transparent 40%),
+              #02040d;
 }
 
 .stars,
@@ -48,7 +48,7 @@ body::-webkit-scrollbar {
     radial-gradient(2px 2px at 160px 30px, #ffffff, transparent);
   background-size: 200px 120px;
   animation: twinkle 4s ease-in-out infinite alternate;
-  opacity: 0.35;
+  opacity: 0.22;
 }
 
 .twinkling {
@@ -57,7 +57,7 @@ body::-webkit-scrollbar {
     radial-gradient(1px 1px at 140px 30px, rgba(255, 255, 255, 0.8), transparent);
   background-size: 260px 180px;
   animation: twinkle 6s ease-in-out infinite alternate-reverse;
-  opacity: 0.25;
+  opacity: 0.14;
 }
 
 .page-stack {
@@ -108,7 +108,7 @@ body::-webkit-scrollbar {
   align-items: center;
   gap: 12px;
   font-size: 0.95rem;
-  color: #c8e9ff;
+  color: #9ab7ca;
   letter-spacing: 0.05em;
   pointer-events: none;
 }
@@ -129,7 +129,7 @@ body::-webkit-scrollbar {
   display: inline-block;
   width: 2px;
   height: 48px;
-  background: linear-gradient(10deg, rgba(0, 176, 255, 0.8), transparent);
+  background: linear-gradient(10deg, rgba(74, 128, 158, 0.5), transparent);
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -140,7 +140,7 @@ body::-webkit-scrollbar {
   pointer-events: auto;
 
   &:hover {
-    color: #00b0ff;
+    color: #6fabc9;
   }
 }
 
@@ -151,8 +151,8 @@ body::-webkit-scrollbar {
 }
 
 @keyframes twinkle {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 1; }
+  0%, 100% { opacity: 0.22; }
+  50% { opacity: 0.55; }
 }
 
 @keyframes floatY {
